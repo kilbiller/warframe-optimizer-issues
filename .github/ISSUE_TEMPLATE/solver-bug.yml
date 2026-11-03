@@ -1,0 +1,42 @@
+name: Solver result bug
+description: The solver returned a wrong build, a wrong number, or no result.
+title: 'Solver bug: '
+labels: ['bug']
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem is it?
+      options:
+        - A better build exists than the one returned
+        - The damage or kill time looks wrong
+        - The build is impossible in game (slots, capacity, polarities, mod conflicts)
+        - The solver failed or returned no result
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What did the solver return?
+      description: The build or number that looks wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+      description: >-
+        The build or number you expected, and how you know: an in-game test, a wiki page, a
+        calculation. Include a link or screenshot if you have one.
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Run report
+      description: >-
+        Click **Copy report** in the results panel and paste it here, or attach it as a `.txt` file
+        if it's too long. It holds the weapon, target and settings needed to reproduce the run.
+    validations:
+      required: true

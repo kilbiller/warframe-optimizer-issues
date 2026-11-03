@@ -1,0 +1,41 @@
+name: Missing weapon
+description: Request a weapon the optimizer doesn't have yet.
+title: 'Missing weapon: '
+labels: ['enhancement']
+body:
+  - type: input
+    id: weapon
+    attributes:
+      label: Weapon
+      description: The exact in-game name, including any variant (Prime, Kuva, Tenet, Coda...).
+      placeholder: Braton Prime
+    validations:
+      required: true
+  - type: dropdown
+    id: slot
+    attributes:
+      label: Slot
+      options:
+        - Primary
+        - Secondary
+        - Melee
+        - Archgun
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: wiki
+    attributes:
+      label: Wiki link
+      placeholder: https://wiki.warframe.com/w/Braton_Prime
+    validations:
+      required: false
+  - type: textarea
+    id: mechanics
+    attributes:
+      label: Special mechanics
+      description: >-
+        Anything the stats table doesn't show: alt-fires, charge or ramp-up behavior, passives,
+        Incarnon forms, Valence bonuses, how the weapon is usually played.
+    validations:
+      required: false
