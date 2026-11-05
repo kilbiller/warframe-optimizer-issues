@@ -1,0 +1,53 @@
+name: Unrecognized Riven
+description: The Riven scan didn't recognize a card, or read it wrong.
+title: 'Riven scan: '
+labels: ['bug']
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What went wrong?
+      options:
+        - The weapon family wasn't recognized, or is wrong
+        - The Riven name is wrong
+        - An attribute is missing
+        - An attribute has the wrong name or value
+        - A correct value is flagged as out of range, or the rank is wrong
+        - The scan failed
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot of the Riven card
+      description: >-
+        Paste or drag the same image you scanned, without cropping or editing it. The scan can read
+        a different image differently, so the original is what reproduces the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: scanned-text
+    attributes:
+      label: Scanned text
+      description: >-
+        Click **Show the scanned text** in the review form and paste it here. Leave this empty if
+        the scan failed.
+      render: text
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should it have read?
+      description: Anything the screenshot doesn't make obvious, such as the part that came out wrong.
+    validations:
+      required: false
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and operating system
+      description: The same card can scan differently from one machine to another.
+      placeholder: Chrome on Windows 11
+    validations:
+      required: true
